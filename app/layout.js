@@ -7,10 +7,10 @@ import { Chivo, Poppins } from 'next/font/google';
 const chivo = Chivo({ variable: '--font-chivo', subsets: ['latin'], weight: ['600', '700', '900'] });
 const poppins = Poppins({ variable: '--font-poppins', weight: ['400', '600', '700'], subsets: ['latin'], display: 'swap' });
 
-const __jsonld = {"@context":"https://schema.org","@type":"WebSite","name":"Zychrome","description":"Webinar dengan enam titik interaksi","url":"https://landing-zychrome.vercel.app","inLanguage":"id"};
+const __jsonld = {"@context":"https://schema.org","@type":"WebSite","name":"Zychrome","description":"Webinar dengan enam titik interaksi","url":"https://landing-zychrome.pintuweb.id","inLanguage":"id"};
 
 export const metadata = {
-  metadataBase: new URL("https://landing-zychrome.vercel.app"),
+  metadataBase: new URL("https://landing-zychrome.pintuweb.id"),
   title: { default: "Zychrome — Webinar yang Bisa Membalas Anda", template: "%s — Zychrome" },
   description: "Zychrome: webinar 95 menit dengan enam titik interaksi. Sesi 07 \"Mengenali penipuan digital untuk usaha kecil\", Selasa 20 Oktober 2026. Coba polling dan kuisnya sebelum mendaftar.",
   applicationName: "Zychrome",
@@ -18,11 +18,11 @@ export const metadata = {
   authors: [{ name: "Zychrome" }],
   creator: "Zychrome",
   publisher: "Zychrome",
-  alternates: { canonical: "https://landing-zychrome.vercel.app" },
+  alternates: { canonical: "https://landing-zychrome.pintuweb.id" },
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://landing-zychrome.vercel.app",
+    url: "https://landing-zychrome.pintuweb.id",
     siteName: "Zychrome",
     title: "Zychrome — Webinar yang Bisa Membalas Anda",
     description: "Zychrome: webinar 95 menit dengan enam titik interaksi. Sesi 07 \"Mengenali penipuan digital untuk usaha kecil\", Selasa 20 Oktober 2026. Coba polling dan kuisnya sebelum mendaftar.",

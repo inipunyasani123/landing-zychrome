@@ -2,7 +2,7 @@
 
 Zychrome: webinar 95 menit dengan enam titik interaksi. Sesi 07 "Mengenali penipuan digital untuk usaha kecil", Selasa 20 Oktober 2026. Coba polling dan kuisnya sebelum mendaftar.
 
-**Demo live:** https://landing-zychrome.vercel.app
+**Demo live:** https://landing-zychrome.pintuweb.id
 
 ![Tangkapan layar Zychrome](public/og.jpg)
 
