@@ -14,20 +14,20 @@ export default function SiteFooter() {
         </div>
         <nav aria-label="Papan hasil">
           <p className="meter-label mb-4 text-signal">Papan hasil</p>
-          <ul className="space-y-2.5 text-sm">
+          <ul className="space-y-1 text-sm">
             {PAPAN.map((p) => (
               <li key={p.nomor}>
-                <Link href={`/papan-hasil#sesi-${p.nomor}`} className="hover:text-chrome">Sesi {p.nomor} · {p.judul}</Link>
+                <Link href={`/papan-hasil#sesi-${p.nomor}`} className="inline-block py-1.5 hover:text-chrome">Sesi {p.nomor} · {p.judul}</Link>
               </li>
             ))}
           </ul>
         </nav>
         <nav aria-label="Coba">
           <p className="meter-label mb-4 text-signal">Sebelum mendaftar</p>
-          <ul className="space-y-2.5 text-sm">
-            <li><Link href="/coba" className="hover:text-chrome">Coba polling & kuis</Link></li>
-            <li><Link href="/#harga" className="hover:text-chrome">Harga</Link></li>
-            <li><Link href="/#daftar" className="hover:text-chrome">Daftar sesi {SESI.nomor}</Link></li>
+          <ul className="space-y-1 text-sm">
+            <li><Link href="/coba" className="inline-block py-1.5 hover:text-chrome">Coba polling & kuis</Link></li>
+            <li><Link href="/#harga" className="inline-block py-1.5 hover:text-chrome">Harga</Link></li>
+            <li><Link href="/#daftar" className="inline-block py-1.5 hover:text-chrome">Daftar sesi {SESI.nomor}</Link></li>
           </ul>
         </nav>
       </div>

@@ -32,7 +32,7 @@ export default function Home() {
       <Untuk />
       <Harga />
       <FAQ />
-      <Registration />
+      <Registration sesi={{ nomor: SESI.nomor, judul: SESI.judul, hari: SESI.hari, jam: SESI.jam }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventLd) }} />
     </main>
   );

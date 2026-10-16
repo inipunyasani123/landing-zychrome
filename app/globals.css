@@ -61,7 +61,9 @@
   width: 3px;
   background: var(--color-signal);
   border-radius: 1px;
-  animation: bar 1.6s ease-in-out infinite;
+  /* Dua putaran saja (< 5 detik), lalu diam: gerak otomatis yang terus
+     berulang harus bisa dihentikan (WCAG 2.2.2), jadi lebih baik berhenti sendiri. */
+  animation: bar 1.6s ease-in-out 2;
 }
 
 .signal-bars span:nth-child(1) { height: 40%; animation-delay: 0s; }
@@ -71,9 +73,22 @@
 .signal-bars span:nth-child(5) { height: 85%; animation-delay: 0.6s; }
 
 @keyframes bar {
-  0%, 100% { transform: scaleY(0.55); }
-  50% { transform: scaleY(1); }
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.55); }
 }
+
+/* Animasi masuk hero (CSS, tanpa pustaka JS): judul hanya bergeser, tidak
+   disembunyikan, supaya LCP tidak menunggu JavaScript. */
+@keyframes masuk {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes geser {
+  from { transform: translateY(16px); }
+  to { transform: none; }
+}
+.masuk { animation: masuk 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.geser { animation: geser 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
 
 /* --------------------------------------------------------------------------
    3. Kisi panel — latar halus bergaris seperti permukaan alat

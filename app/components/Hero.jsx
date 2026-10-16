@@ -1,7 +1,7 @@
-'use client';
-
-import { motion } from 'framer-motion';
 import { SESI } from '@/lib/sesi';
+
+/* Komponen server: animasi masuk memakai kelas CSS .masuk/.geser (globals.css),
+   jadi isi hero tampil tanpa menunggu JavaScript. */
 
 const bacaan = [
   ['92%', 'Peserta ikut menjawab polling'],
@@ -11,49 +11,32 @@ const bacaan = [
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-graphite pt-28 pb-20 md:pt-36 md:pb-24">
+    <section className="relative overflow-hidden bg-graphite pt-28 pb-16 md:pt-36 md:pb-24">
       <div aria-hidden="true" className="panel-grid absolute inset-0 opacity-60" />
       <div aria-hidden="true" className="signal-glow absolute inset-x-0 top-0 h-96" />
 
       <div className="relative z-10 mx-auto max-w-6xl px-6">
         <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16">
           <div>
-            <motion.p
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="mb-8 flex items-center gap-3"
-            >
+            <p className="masuk mb-8 flex items-center gap-3">
               <span aria-hidden="true" className="signal-bars">
                 <span /><span /><span /><span /><span />
               </span>
               <span className="meter-label text-signal">Sesi {SESI.nomor} · {SESI.hari}</span>
-            </motion.p>
+            </p>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.08 }}
-              className="text-[2.5rem] leading-[1.02] font-bold sm:text-5xl lg:text-[3.8rem]"
-            >
+            <h1 className="geser text-[2.5rem] leading-[1.02] font-bold sm:text-5xl lg:text-[3.8rem]">
               Webinar yang bisa
               <br />
               <span className="text-signal">membalas Anda.</span>
-            </motion.h1>
+            </h1>
 
-            {/* Paragraf pembuka sengaja tanpa kunci opacity: kalau animasinya
-                gagal berjalan, isinya tetap terbaca. */}
-            <motion.p className="mt-7 max-w-lg leading-relaxed text-chrome-dim">
+            <p className="mt-7 max-w-lg leading-relaxed text-chrome-dim">
               Enam titik interaksi di sepanjang sesi: polling, kuis, papan pertanyaan, dan reaksi
               langsung. Kami mengukur keterlibatannya, bukan sekadar menghitung jumlah penonton.
-            </motion.p>
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.24 }}
-              className="mt-9 flex flex-col gap-4 sm:flex-row"
-            >
+            <div className="masuk mt-9 flex flex-col gap-4 [animation-delay:0.2s] sm:flex-row">
               <a
                 href="#daftar"
                 className="inline-flex items-center justify-center bg-signal px-8 py-4 text-sm font-bold text-graphite transition-colors duration-300 hover:bg-signal-2"
@@ -66,14 +49,14 @@ export default function Hero() {
               >
                 Lihat Titik Interaksi
               </a>
-            </motion.div>
+            </div>
 
-            <dl className="mt-14 grid gap-8 border-t border-chrome/12 pt-8 sm:grid-cols-3">
+            <dl className="mt-12 grid grid-cols-3 gap-4 border-t border-chrome/12 pt-8 sm:gap-8">
               {bacaan.map(([n, k]) => (
                 <div key={k}>
                   <dt className="sr-only">{k}</dt>
                   <dd>
-                    <span className="block text-2xl font-bold text-chrome">{n}</span>
+                    <span className="block text-xl font-bold text-chrome sm:text-2xl">{n}</span>
                     <span className="meter-label mt-2.5 block text-chrome-dim">{k}</span>
                   </dd>
                 </div>
@@ -82,12 +65,7 @@ export default function Hero() {
           </div>
 
           {/* Panel pembacaan langsung */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="border border-chrome/12 bg-graphite-2 p-7 sm:p-8"
-          >
+          <div className="masuk border border-chrome/12 bg-graphite-2 p-6 [animation-delay:0.15s] sm:p-8">
             <div className="mb-7 flex items-center justify-between border-b border-chrome/12 pb-4">
               <span className="meter-label text-chrome-dim">Panel Keterlibatan</span>
               <span aria-hidden="true" className="signal-bars">
@@ -117,7 +95,7 @@ export default function Hero() {
             <p className="meter-label mt-7 border-t border-chrome/12 pt-5 leading-[1.7] text-chrome-dim">
               Angka contoh dari sesi purwarupa
             </p>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

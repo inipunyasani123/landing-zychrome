@@ -2,7 +2,7 @@ import { FAQ as DAFTAR } from '@/lib/sesi';
 
 export default function FAQ() {
   return (
-    <section className="bg-graphite-2 py-20 md:py-28">
+    <section className="bg-graphite-2 py-16 md:py-28">
       <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
         <div>
           <p className="meter-label mb-5 text-signal">Pertanyaan</p>
