@@ -1,7 +1,8 @@
+import Image from 'next/image';
 import { NARASUMBER } from '@/lib/sesi';
 
-/* Tanpa foto: tiap narasumber ditandai inisial dan batang sinyal yang
-   menunjukkan seberapa lama ia berbicara di sesi (5 = paling lama). */
+/* Narasumber fiktif, jadi potretnya ilustrasi buatan sendiri (public/images/narasumber), bukan foto
+   orang sungguhan. Batang sinyal menunjukkan seberapa lama ia berbicara di sesi (5 = paling lama). */
 export default function Narasumber() {
   return (
     <section className="bg-graphite-2 py-16 md:py-28">
@@ -14,7 +15,13 @@ export default function Narasumber() {
           {NARASUMBER.map((n) => (
             <li key={n.nama} className="border border-chrome/12 bg-graphite p-6">
               <div className="flex items-center justify-between">
-                <span className="font-[family-name:var(--font-chivo)] text-3xl font-black text-signal">{n.inisial}</span>
+                <Image
+                  src={`/images/narasumber/${n.potret}.webp`}
+                  alt=""
+                  width={88}
+                  height={88}
+                  className="h-[4.5rem] w-[4.5rem] rounded-full ring-1 ring-signal/40 sm:h-[5.5rem] sm:w-[5.5rem]"
+                />
                 <span className="flex h-6 items-end gap-1" aria-label={`Porsi bicara ${n.sinyal} dari 5`} role="img">
                   {[1, 2, 3, 4, 5].map((k) => (
                     <span key={k} className={`w-1.5 ${k <= n.sinyal ? 'bg-signal' : 'bg-chrome/20'}`} style={{ height: `${k * 20}%` }} />
