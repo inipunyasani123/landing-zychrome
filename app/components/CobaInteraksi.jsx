@@ -63,8 +63,8 @@ function Kuis() {
               <blockquote className="mt-3 border-l-2 border-chrome/30 pl-4 leading-relaxed text-chrome">{k.pesan}</blockquote>
               {!sudah ? (
                 <div className="mt-4 flex gap-3">
-                  <button type="button" onClick={() => setJawab((j) => ({ ...j, [i]: false }))} className="meter-label border border-chrome/25 px-4 py-2.5 text-chrome hover:border-signal hover:text-signal">Asli</button>
-                  <button type="button" onClick={() => setJawab((j) => ({ ...j, [i]: true }))} className="meter-label border border-chrome/25 px-4 py-2.5 text-chrome hover:border-warn hover:text-warn">Palsu</button>
+                  <button type="button" onClick={() => setJawab((j) => ({ ...j, [i]: false }))} className="meter-label min-h-11 border border-chrome/25 px-4 py-2.5 text-chrome hover:border-signal hover:text-signal">Asli</button>
+                  <button type="button" onClick={() => setJawab((j) => ({ ...j, [i]: true }))} className="meter-label min-h-11 border border-chrome/25 px-4 py-2.5 text-chrome hover:border-warn hover:text-warn">Palsu</button>
                 </div>
               ) : (
                 <div className="mt-4" aria-live="polite">

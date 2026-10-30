@@ -38,7 +38,7 @@ export default function PapanHasil() {
           </p>
           <nav aria-label="Lompat ke sesi" className="mt-8 flex flex-wrap gap-2">
             {PAPAN.map((p) => (
-              <a key={p.nomor} href={`#sesi-${p.nomor}`} className="meter-label border border-chrome/20 px-3.5 py-2 text-chrome hover:border-signal hover:text-signal">
+              <a key={p.nomor} href={`#sesi-${p.nomor}`} className="meter-label inline-flex min-h-11 items-center border border-chrome/20 px-3.5 py-2 text-chrome hover:border-signal hover:text-signal">
                 Sesi {p.nomor}
               </a>
             ))}
@@ -100,7 +100,7 @@ export default function PapanHasil() {
         })}
         <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 pt-4 sm:flex-row sm:items-center">
           <p className="meter-label leading-[1.7]">Angka di papan hasil ini adalah contoh untuk keperluan purwarupa desain.</p>
-          <Link href="/coba" className="meter-label shrink-0 bg-signal px-5 py-3 text-graphite hover:bg-signal-2">Coba menjawab sendiri</Link>
+          <Link href="/coba" className="meter-label inline-flex min-h-11 shrink-0 items-center bg-signal px-5 py-3 text-graphite hover:bg-signal-2">Coba menjawab sendiri</Link>
         </div>
       </div>
     </main>
